@@ -10,7 +10,9 @@ app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "taherkhalil52@gmail.com"
 app_license = "MIT"
-fixtures = ["Custom Field"]
+fixtures = ["Custom Field",{"doctype": "DocType",
+            "filters": { "custom" : ["=", "1"] }
+           }]
 
 # Includes in <head>
 # ------------------
