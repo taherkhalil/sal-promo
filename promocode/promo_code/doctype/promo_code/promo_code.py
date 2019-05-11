@@ -42,3 +42,18 @@ def from_pos_call(promo):
 		# doc.discount_amount =discount_amount
 		return discount_per
 
+@frappe.whitelist()
+def get_sales_order_items(so_name):
+	frappe.errprint("get sales item called")
+	doc = frappe.get_doc("Sales Order",so_name)
+	item_dict ={}
+	row ={}
+	for item in doc.get("items"):
+		item_dict[item.item_code]=item.qty
+
+	so_dict ={
+	'customer':doc.customer,
+	'items':item_dict
+	}
+
+	return so_dict
