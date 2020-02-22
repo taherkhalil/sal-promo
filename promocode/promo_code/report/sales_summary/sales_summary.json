@@ -1,0 +1,29 @@
+{
+ "add_total_row": 1, 
+ "apply_user_permissions": 0, 
+ "creation": "2019-07-19 19:14:48.744709", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "idx": 0, 
+ "is_standard": "Yes", 
+ "modified": "2019-07-19 20:03:01.637882", 
+ "modified_by": "Administrator", 
+ "module": "Promo code", 
+ "name": "Sales Summary", 
+ "owner": "Administrator", 
+ "ref_doctype": "Sales Invoice", 
+ "report_name": "Sales Summary", 
+ "report_type": "Script Report", 
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  }, 
+  {
+   "role": "Accounts User"
+  }, 
+  {
+   "role": "System Manager"
+  }
+ ]
+}

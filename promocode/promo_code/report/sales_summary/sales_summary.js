@@ -2,8 +2,8 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Daily Sales Report"] = {
-"filters": [
+frappe.query_reports["Sales Summary"] = {
+	"filters": [
 		{
 			"fieldname":"from_date",
 			"label": __("From Date"),
@@ -21,14 +21,6 @@ frappe.query_reports["Daily Sales Report"] = {
 			"default": frappe.datetime.get_today()
 		},
 		{
-			"fieldname":"attended_by",
-			"label": __("Service Provider"),
-			"fieldtype": "Link",
-			"options": "Service Providers",
-			"width": "80",
-			"reqd": 0
-		},
-		{
 			"fieldname":"pos_profile",
 			"label": __("POS Profile"),
 			"fieldtype": "Link",
@@ -38,4 +30,3 @@ frappe.query_reports["Daily Sales Report"] = {
 		},
 	]
 }
-

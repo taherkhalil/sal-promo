@@ -9,10 +9,10 @@ from frappe import msgprint, _
 from frappe.utils import flt, cstr, cint
 
 def execute(filters=None):
-	frappe.errprint("execute")
+	# frappe.errprint("execute")
 	columns = get_column()
-	frappe.errprint('columns are ')
-	frappe.errprint(columns)
+	# frappe.errprint('columns are ')
+	# frappe.errprint(columns)
 	data = get_si_data(filters)
 	return columns, data
 
@@ -96,6 +96,8 @@ def get_si_data(filters):
 		if mode_of_payment:
 			for mod in mode_of_payment:
 				if mod.mode_of_payment == "Cash":
+					cash = mod.amount
+				if mod.mode_of_payment == "Cash Sha'ab":
 					cash = mod.amount
 				if mod.mode_of_payment == "KNET":
 					knet = mod.amount
@@ -218,6 +220,11 @@ def get_conditions(filters):
 
 	if filters.get("attended_by"):
 		conditions += " and (name) IN (select parent from `tabSales Invoice Item` where attended_by = '%s') " % frappe.db.escape(filters["attended_by"])
+
+	if filters.get("pos_profile"):
+		conditions += " and pos_profile = '%s' " % frappe.db.escape(filters["pos_profile"])
+
+
 	
 
 	# match_conditions = frappe.build_match_conditions("Sales Invoice")
